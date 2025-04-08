@@ -27,7 +27,7 @@ version = "0"
 [package]
 authors = ["Kevin Amado <kamadorueda@gmail.com>"]
 description = "The Uncompromising Nix Code Formatter"
-edition = "2021"
+edition = "2024"
 license = "Unlicense"
 name = "alejandra"
 readme = "../../README.md"

@@ -1,5 +1,6 @@
 # https://github.com/kamadorueda/machine/blob/main/nixos-modules/editor/rustfmt.toml
-edition = "2021"
+edition = "2024"
+style_edition = "2024"
 enum_discrim_align_threshold = 999
 # force_multiline_blocks = true
 format_code_in_doc_comments = true
@@ -21,5 +22,4 @@ struct_field_align_threshold = 999
 unstable_features = true
 use_field_init_shorthand = true
 use_small_heuristics = "Max"
-style_edition = "2021"
 wrap_comments = true
