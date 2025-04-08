@@ -22,11 +22,7 @@ impl Children {
                 matches!(child.kind(), rnix::SyntaxKind::TOKEN_COMMENT)
             });
 
-            if has_comments {
-                Some(build_ctx.pos_old.clone())
-            } else {
-                None
-            }
+            if has_comments { Some(build_ctx.pos_old.clone()) } else { None }
         };
 
         for child in node.children_with_tokens() {

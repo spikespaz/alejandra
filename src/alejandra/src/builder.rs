@@ -34,11 +34,7 @@ pub(crate) fn build(
     build_step(&mut builder, build_ctx, &crate::builder::Step::Format(element));
 
     if build_ctx.force_wide {
-        if build_ctx.force_wide_success {
-            Some(builder.finish())
-        } else {
-            None
-        }
+        if build_ctx.force_wide_success { Some(builder.finish()) } else { None }
     } else {
         Some(builder.finish())
     }
