@@ -2,8 +2,7 @@ use std::collections::HashMap;
 use std::io::Write;
 use std::path::PathBuf;
 
-use alejandra::config::Config;
-use alejandra::config::Indentation;
+use alejandra::config::{Config, Indentation};
 use pretty_assertions::assert_eq;
 
 #[test]

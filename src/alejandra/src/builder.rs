@@ -1,5 +1,4 @@
-use crate::config::Config;
-use crate::config::Indentation;
+use crate::config::{Config, Indentation};
 
 #[derive(PartialEq)]
 pub(crate) enum Step {
@@ -16,13 +15,13 @@ pub(crate) enum Step {
 
 #[derive(Clone)]
 pub(crate) struct BuildCtx {
-    pub config:             Config,
-    pub force_wide:         bool,
+    pub config: Config,
+    pub force_wide: bool,
     pub force_wide_success: bool,
-    pub indentation:        usize,
-    pub pos_old:            crate::position::Position,
-    pub path:               String,
-    pub vertical:           bool,
+    pub indentation: usize,
+    pub pos_old: crate::position::Position,
+    pub path: String,
+    pub vertical: bool,
 }
 
 pub(crate) fn build(

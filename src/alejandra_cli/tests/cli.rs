@@ -1,14 +1,13 @@
 use std::fmt::Write as _;
 use std::io::Write as _;
 use std::path::PathBuf;
-use std::process::Command;
-use std::process::Stdio;
+use std::process::{Command, Stdio};
 
 use pretty_assertions::assert_eq;
 
 #[derive(Debug)]
 struct TestCase {
-    args:  &'static [&'static str],
+    args: &'static [&'static str],
     stdin: Option<&'static str>,
 }
 
@@ -37,21 +36,21 @@ const CASES: &[TestCase] = &[
     TestCase { args: &[".", "--exclude", "."], stdin: None },
     TestCase { args: &[".", "--exclude", ".", "--quiet"], stdin: None },
     TestCase {
-        args:  &["--exclude", ".", "--quiet", "--quiet", "--", "."],
+        args: &["--exclude", ".", "--quiet", "--quiet", "--", "."],
         stdin: None,
     },
     //
     TestCase { args: &["--check", "tests/inputs/changed.nix"], stdin: None },
     TestCase {
-        args:  &["--check", "tests/inputs/changed.nix", "--quiet"],
+        args: &["--check", "tests/inputs/changed.nix", "--quiet"],
         stdin: None,
     },
     TestCase {
-        args:  &["-c", "tests/inputs/changed.nix", "-e", "tests/changed.nix"],
+        args: &["-c", "tests/inputs/changed.nix", "-e", "tests/changed.nix"],
         stdin: None,
     },
     TestCase {
-        args:  &[
+        args: &[
             "-c",
             "tests/inputs/changed.nix",
             "-q",
@@ -61,29 +60,29 @@ const CASES: &[TestCase] = &[
         stdin: None,
     },
     TestCase {
-        args:  &["--check", "tests/inputs/changed.nix", "-qq"],
+        args: &["--check", "tests/inputs/changed.nix", "-qq"],
         stdin: None,
     },
     TestCase { args: &["-c", "tests/inputs/unchanged.nix"], stdin: None },
     TestCase {
-        args:  &["--check", "tests/inputs/unchanged.nix", "-q"],
+        args: &["--check", "tests/inputs/unchanged.nix", "-q"],
         stdin: None,
     },
     TestCase {
-        args:  &["--check", "tests/inputs/unchanged.nix", "-qq"],
+        args: &["--check", "tests/inputs/unchanged.nix", "-qq"],
         stdin: None,
     },
     TestCase { args: &["--check", "tests/inputs/error.nix"], stdin: None },
     TestCase {
-        args:  &["--check", "tests/inputs/error.nix", "-q"],
+        args: &["--check", "tests/inputs/error.nix", "-q"],
         stdin: None,
     },
     TestCase {
-        args:  &["--check", "tests/inputs/error.nix", "-qq"],
+        args: &["--check", "tests/inputs/error.nix", "-qq"],
         stdin: None,
     },
     TestCase {
-        args:  &[
+        args: &[
             "--check",
             "tests/inputs/unchanged.nix",
             "--experimental-config",
@@ -94,7 +93,7 @@ const CASES: &[TestCase] = &[
         stdin: None,
     },
     TestCase {
-        args:  &[
+        args: &[
             "--check",
             "tests/inputs/unchanged.nix",
             "--experimental-config",
@@ -105,7 +104,7 @@ const CASES: &[TestCase] = &[
         stdin: None,
     },
     TestCase {
-        args:  &[
+        args: &[
             "--check",
             "tests/inputs/unchanged.nix",
             "--experimental-config",

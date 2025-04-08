@@ -1,5 +1,5 @@
 pub(crate) struct Children {
-    children:      Vec<rnix::SyntaxElement>,
+    children: Vec<rnix::SyntaxElement>,
     current_index: usize,
 }
 
@@ -62,8 +62,7 @@ impl Children {
                                             | rnix::SyntaxKind::NODE_STRING
                                     )
                                 {
-                                    simplified =
-                                        expression.element.into_node().unwrap();
+                                    simplified = expression.element.into_node().unwrap();
                                 } else {
                                     break;
                                 }

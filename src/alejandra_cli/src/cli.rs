@@ -2,9 +2,7 @@ use std::fs::read_to_string;
 use std::io::Read;
 
 use alejandra::config::Config;
-use clap::ArgAction;
-use clap::Parser;
-use clap::value_parser;
+use clap::{ArgAction, Parser, value_parser};
 use futures::future::RemoteHandle;
 use futures::stream::FuturesUnordered;
 use futures::task::SpawnExt;
@@ -63,7 +61,7 @@ struct CLIArgs {
 
 #[derive(Clone)]
 struct FormattedPath {
-    pub path:   String,
+    pub path: String,
     pub status: alejandra::format::Status,
 }
 
